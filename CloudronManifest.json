@@ -1,20 +1,22 @@
 {
   "id": "io.cloudron.bluesky-pds",
-  "version": "1.0.0",
-  "manifestVersion": 2,
   "title": "Bluesky PDS",
+  "author": "Bluesky Social",
   "description": "A Personal Data Server for AT Protocol and Bluesky",
   "tagline": "Self-hosted Bluesky server",
-  "author": "Bluesky Social",
-  "website": "https://github.com/bluesky-social/pds",
-  "documentationUrl": "https://github.com/bluesky-social/pds",
-  "tags": ["federation","atproto","pds","bluesky"],
-  "httpPort": 3000,
+  "version": "1.0.0",
+  "manifestVersion": 2,
   "healthCheckPath": "/xrpc/_health",
+  "httpPort": 3000,
   "addons": {
     "localstorage": {
       "volumePath": "/app/data"
     },
     "sendmail": {}
-  }
+  },
+  "website": "https://github.com/bluesky-social/pds",
+  "documentationUrl": "https://github.com/bluesky-social/pds",
+  "contactEmail": "support@cloudron.io",
+  "icon": "file://logo.png",
+  "tags": ["federation","atproto","pds","bluesky"]
 }
