@@ -1,6 +1,6 @@
 # cloudron-bluesky-pds
 
-This project packages a Bluesky Personal Data Server](https://github.com/bluesky-social/pds) for installation on [Cloudron](https://www.cloudron.io/).
+This project packages a [Bluesky Personal Data Server](https://github.com/bluesky-social/pds) for installation on [Cloudron](https://www.cloudron.io/).
 
 ## Cloudron Apps
 Packaged apps are deployed to Docker containers on the Cloudron server.  During development this is done with the [Cloudron CLI](https://docs.cloudron.io/packaging/cli/).

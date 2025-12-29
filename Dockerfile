@@ -11,7 +11,6 @@ RUN git clone https://github.com/bluesky-social/goat.git && cd goat && git check
 # Add dependencies needed by pdsadmin scripts and start.sh
 RUN apt-get update && apt-get install -y ca-certificates curl gnupg jq lsb-release openssl sqlite3 xxd
 
-
 # Move files into the image and install
 RUN mkdir -p /app/code
 WORKDIR /app/code
@@ -41,6 +40,10 @@ ENV PDS_PORT=3000
 ENV NODE_ENV=production
 # potential perf issues w/ io_uring on this version of node
 ENV UV_USE_IO_URING=0
+
+# create link to a pds.env in a writeable location
+RUN mkdir -p /pds
+RUN ln -sfv /run/pds.env /pds/pds.env
 
 # Health check to verify PDS is running and responsive
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \

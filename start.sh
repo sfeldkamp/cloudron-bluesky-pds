@@ -19,6 +19,14 @@ PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX=$(eval "${GENERATE_K256_PRIVATE_KEY_CM
 # Set default data directory if not specified
 PDS_DATA_DIRECTORY="${PDS_DATA_DIRECTORY:-/app/data}"
 PDS_BLOBSTORE_DISK_LOCATION="${PDS_BLOBSTORE_DISK_LOCATION:-$PDS_DATA_DIRECTORY/blocks}"
+
+# If application expects /pds but we're in read-only environment, ensure data is accessible
+# The application will look for data at /pds, so we need to make sure it's available at that location
+# In a read-only environment, we can't create symlinks, so we'll use the existing directory structure
+if [[ "$PDS_DATA_DIRECTORY" == "/pds" ]]; then
+  PDS_DATA_DIRECTORY="/app/data"
+  PDS_BLOBSTORE_DISK_LOCATION="/app/data/blocks"
+fi
 PDS_BLOB_UPLOAD_LIMIT="${PDS_BLOB_UPLOAD_LIMIT:-104857600}"
 
 # Set default service URLs (point to public AT Protocol network)
@@ -38,6 +46,30 @@ NODE_ENV="${NODE_ENV:-production}"
 echo "Initializing data directories..."
 mkdir -p "$PDS_DATA_DIRECTORY"
 mkdir -p "$PDS_BLOBSTORE_DISK_LOCATION"
+mkdir -p "/run"
+
+
+# Create the PDS env config. `goat` CLI reads PDS_ADMIN_PASSWORD from /pds/pds.env
+# This isn't writeable in Cloudron, so we've created a symlink in Dockerfile to 
+# /run/pds.env which is writeable.
+touch /run/pds.env
+cat <<PDS_CONFIG >"/run/pds.env"
+PDS_HOSTNAME=${PDS_HOSTNAME}
+PDS_JWT_SECRET=${PDS_JWT_SECRET}
+PDS_ADMIN_PASSWORD=${PDS_ADMIN_PASSWORD}
+PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX=${PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX}
+PDS_DATA_DIRECTORY=${PDS_DATA_DIRECTORY}
+PDS_BLOBSTORE_DISK_LOCATION=${PDS_DATA_DIRECTORY}/blocks
+PDS_BLOB_UPLOAD_LIMIT=104857600
+PDS_DID_PLC_URL=${PDS_DID_PLC_URL}
+PDS_BSKY_APP_VIEW_URL=${PDS_BSKY_APP_VIEW_URL}
+PDS_BSKY_APP_VIEW_DID=${PDS_BSKY_APP_VIEW_DID}
+PDS_REPORT_SERVICE_URL=${PDS_REPORT_SERVICE_URL}
+PDS_REPORT_SERVICE_DID=${PDS_REPORT_SERVICE_DID}
+PDS_CRAWLERS=${PDS_CRAWLERS}
+LOG_ENABLED=true
+PDS_CONFIG
+
 
 # Export all PDS variables for the application
 export PDS_HOSTNAME
