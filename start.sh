@@ -6,7 +6,7 @@ set -e
 
 
 PDS_HOSTNAME="${CLOUDRON_APP_DOMAIN}"
-PDS_EMAIL_SMTP_URL="smtps://${CLOUDRON_MAIL_SMTP_USERNAME}:${CLOUDRON_MAIL_SMTP_PASSWORD}@${CLOUDRON_MAIL_DOMAIN}/"
+PDS_EMAIL_SMTP_URL="smtps://${CLOUDRON_MAIL_SMTP_USERNAME}:${CLOUDRON_MAIL_SMTP_PASSWORD}@${CLOUDRON_MAIL_SMTP_SERVER}/"
 PDS_EMAIL_FROM_ADDRESS="${CLOUDRON_MAIL_FROM}"
 
 # Generate some secrets needed by Bluesky PDS
@@ -111,6 +111,7 @@ echo "  Hostname: $PDS_HOSTNAME"
 echo "  Data directory: $PDS_DATA_DIRECTORY"
 echo "  Blob storage: $PDS_BLOBSTORE_DISK_LOCATION"
 echo "  Port: $PDS_PORT"
+echo "  PDS_EMAIL_SMTP_URL: $PDS_EMAIL_SMTP_URL"
 
 # Recover data dir for runtime user as recommended to help with backup restoration
 chown -R cloudron:cloudron $PDS_DATA_DIRECTORY
