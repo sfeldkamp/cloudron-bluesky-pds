@@ -111,7 +111,6 @@ echo "  Hostname: $PDS_HOSTNAME"
 echo "  Data directory: $PDS_DATA_DIRECTORY"
 echo "  Blob storage: $PDS_BLOBSTORE_DISK_LOCATION"
 echo "  Port: $PDS_PORT"
-echo "  PDS_EMAIL_SMTP_URL: $PDS_EMAIL_SMTP_URL"
 
 # Recover data dir for runtime user as recommended to help with backup restoration
 chown -R cloudron:cloudron $PDS_DATA_DIRECTORY
