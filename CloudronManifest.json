@@ -12,7 +12,10 @@
     "localstorage": {
       "volumePath": "/app/data"
     },
-    "sendmail": {}
+    "sendmail": {
+      "supportsDisplayName": true,
+      "requiresValidCertificate": true
+    }
   },
   "website": "https://github.com/bluesky-social/pds",
   "documentationUrl": "https://github.com/bluesky-social/pds",
