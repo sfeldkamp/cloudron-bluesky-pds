@@ -6,6 +6,7 @@
   "tagline": "Self-hosted Bluesky server",
   "version": "1.0.0",
   "manifestVersion": 2,
+  "multiDomain": true,
   "healthCheckPath": "/xrpc/_health",
   "httpPort": 3000,
   "addons": {
