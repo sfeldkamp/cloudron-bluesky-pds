@@ -22,5 +22,10 @@
   "documentationUrl": "https://github.com/bluesky-social/pds",
   "contactEmail": "support@cloudron.io",
   "icon": "file://logo.png",
-  "tags": ["federation","atproto","pds","bluesky"]
+  "tags": ["federation","atproto","pds","bluesky"],
+  "checklist": {
+    "add_alias": {
+      "message": "Add a wildcard alias of `*.$CLOUDRON-APP-LOCATION` to the `$CLOUDRON-APP-LOCATION` location following the [instructions in this guide](https://docs.cloudron.io/apps#aliases)."
+    }
+  }
 }
