@@ -20,9 +20,11 @@ Code for [Cloudron is hosted in Gitlab](https://git.cloudron.io/platform).
 - [Cloudron Box](https://git.cloudron.io/platform/box) is the code for the server.
 
 ## Bluesky PDS
+Some differences between this fork and the upstream project:
+
 [Bluesky PDS](https://github.com/bluesky-social/pds) is a thin project whose main file is installer.sh. When run this creates the Bluesky PDS from assets in the repo and also from code downloaded from the main [ATProto repositor PDS package](https://github.com/bluesky-social/atproto/tree/main/packages/pds).  This file has been removed and initial setup portions added to Dockerfile or start.sh.
 
-Some differences between this fork and the upstream project:
+Also...
 1. We can't use compose.yaml.  Cloudron only has support for dockerfile.
 1. We don't need Caddy webserver.  Cloudron maps an app to a subdomain and handles inbound traffic.
 1. Watchtower service won't be necessary either.  Cloudron handles application updates.
