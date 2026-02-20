@@ -39,6 +39,7 @@ PDS_CRAWLERS="${PDS_CRAWLERS:-https://bsky.network}"
 
 # Set defaults for optional variables
 LOG_ENABLED="${LOG_ENABLED:-true}"
+PDS_RATE_LIMITS_ENABLED="${PDS_RATE_LIMITS_ENABLED:-true}"
 PDS_PORT="${PDS_PORT:-3000}"
 NODE_ENV="${NODE_ENV:-production}"
 
