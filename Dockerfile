@@ -55,6 +55,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 # Start the app
 CMD [ "/app/pkg/cloudron_start.sh" ]
 
-LABEL org.opencontainers.image.source=https://github.com/bluesky-social/pds
-LABEL org.opencontainers.image.description="AT Protocol PDS"
+LABEL org.opencontainers.image.source=https://github.com/sfeldkamp/cloudron-bluesky-pds
+LABEL org.opencontainers.image.description="AT Protocol PDS for installation in Cloudron"
 LABEL org.opencontainers.image.licenses=MIT
