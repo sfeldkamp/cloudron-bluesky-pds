@@ -18,19 +18,20 @@
   "contactEmail": "cloudron@sethfeldkamp.com",
   "description": "The Bluesky reference implementation of AT Protocol PDS (Personal Data Server)",
   "documentationUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
+  "forumUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/discussions",
   "healthCheckPath": "/xrpc/_health",
   "httpPort": 3000,
   "icon": "file://CloudronMedia/logo.png",
-  "id": "com.sethfeldkamp.bluesky-pds",
+  "iconUrl": "https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronMedia/logo.png",
+  "id": "com.sethfeldkamp.cloudron-bluesky-pds",
   "manifestVersion": 2,
   "mediaLinks": [
-    "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/Screenshot.png?raw=true"
+    "https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronMedia/Screenshot.png"
   ],
   "minBoxVersion": "9.1.0",
   "multiDomain": true,
   "packagerName": "Seth Feldkamp",
   "packagerUrl": "https://github.com/sfeldkamp",
-  "postInstallMessage": "See App checklist for final setup tasks.  Important!",
   "tagline": "Your ATProtocol Personal Data Server",
   "tags": [
     "federation",
