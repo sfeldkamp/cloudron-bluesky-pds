@@ -31,9 +31,9 @@ COPY --from=build /app/code /app/code
 # Copy goat binary
 COPY --from=build /tmp/goat-build /usr/local/bin/goat
 
-# Copy start.sh
-COPY start.sh /app/pkg/start.sh
-RUN chmod +x /app/pkg/start.sh
+# Copy cloudron_start.sh
+COPY cloudron_start.sh /app/pkg/cloudron_start.sh
+RUN chmod +x /app/pkg/cloudron_start.sh
 
 EXPOSE 3000
 ENV PDS_PORT=3000
