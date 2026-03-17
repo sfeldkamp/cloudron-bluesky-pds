@@ -25,6 +25,17 @@ Be aware that restarting the application or rebooting the Cloudron server will r
 
 Strongly recommend setting up a [secondary backup site](https://docs.cloudron.io/backups) at another storage provider other than your host.
 
+To create a new user open the app web terminal and use the `goat` CLI.
+```sh
+  goat pds admin account create --handle newuser.location.domain.net --email new-user@email.com --password new-password
+```
+
+User self registration requires an invite code.  To create invite codes open the web terminal and use the `goat` CLI
+```sh
+  goat pds admin create-invites
+```
+
+
 
 ## Contributing
 
