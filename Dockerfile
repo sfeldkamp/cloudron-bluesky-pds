@@ -50,7 +50,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
   CMD curl -f http://localhost:3000/xrpc/_health || exit 1
 
 # Start the app
-CMD [ "/app/pkg/start.sh" ]
+CMD [ "/app/pkg/cloudron_start.sh" ]
 
 LABEL org.opencontainers.image.source=https://github.com/bluesky-social/pds
 LABEL org.opencontainers.image.description="AT Protocol PDS"

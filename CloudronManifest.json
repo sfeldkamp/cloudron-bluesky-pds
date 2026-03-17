@@ -1,31 +1,46 @@
 {
-  "id": "io.cloudron.bluesky-pds",
-  "title": "Bluesky PDS",
-  "author": "Bluesky Social",
-  "description": "A Personal Data Server for AT Protocol and Bluesky",
-  "tagline": "Self-hosted Bluesky server",
-  "version": "1.0.0",
-  "manifestVersion": 2,
-  "multiDomain": true,
-  "healthCheckPath": "/xrpc/_health",
-  "httpPort": 3000,
   "addons": {
     "localstorage": {
       "volumePath": "/app/data"
     },
     "sendmail": {
-      "supportsDisplayName": true,
-      "requiresValidCertificate": true
+      "requiresValidCertificate": true,
+      "supportsDisplayName": true
     }
   },
-  "website": "https://github.com/bluesky-social/pds",
-  "documentationUrl": "https://github.com/bluesky-social/pds",
-  "contactEmail": "support@cloudron.io",
-  "icon": "file://logo.png",
-  "tags": ["federation","atproto","pds","bluesky"],
+  "author": "Bluesky Social",
+  "changelog": "file://CLOUDRON_CHANGELOG",
   "checklist": {
     "add_alias": {
       "message": "Add a wildcard alias of `*.$CLOUDRON-APP-LOCATION` to the `$CLOUDRON-APP-LOCATION` location following the [instructions in this guide](https://docs.cloudron.io/apps#aliases)."
     }
-  }
+  },
+  "contactEmail": "cloudron@sethfeldkamp.com",
+  "description": "The Bluesky reference implementation of AT Protocol PDS (Personal Data Server)",
+  "documentationUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
+  "healthCheckPath": "/xrpc/_health",
+  "httpPort": 3000,
+  "icon": "file://CloudronMedia/logo.png",
+  "iconUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/logo.png?raw=true",
+  "id": "com.sethfeldkamp.bluesky-pds",
+  "manifestVersion": 2,
+  "mediaLinks": [
+    "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/Screenshot.png?raw=true"
+  ],
+  "minBoxVersion": "9.1.0",
+  "multiDomain": true,
+  "packagerName": "Seth Feldkamp",
+  "packagerUrl": "https://github.com/sfeldkamp",
+  "postInstallMessage": "See App checklist for final setup tasks.  Important!",
+  "tagline": "Your ATProtocol Personal Data Server",
+  "tags": [
+    "federation",
+    "atproto",
+    "pds",
+    "bluesky",
+    "social"
+  ],
+  "title": "Bluesky PDS",
+  "version": "1.0.0",
+  "website": "https://github.com/sfeldkamp/cloudron-bluesky-pds"
 }
