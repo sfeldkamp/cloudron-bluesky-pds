@@ -21,7 +21,6 @@
   "healthCheckPath": "/xrpc/_health",
   "httpPort": 3000,
   "icon": "file://CloudronMedia/logo.png",
-  "iconUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/logo.png?raw=true",
   "id": "com.sethfeldkamp.bluesky-pds",
   "manifestVersion": 2,
   "mediaLinks": [
