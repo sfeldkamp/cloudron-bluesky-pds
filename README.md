@@ -12,7 +12,12 @@ App version is pinned to the upstream project.
 
 ## Installation
 
-Follow [these instructions](https://docs.cloudron.io/apps#community-app) to install this as a Community App (not reviewed by Cloudron) from the App Store.  The URL to use is: `https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/refs/heads/main/CloudronVersions.json`
+Follow [these instructions](https://docs.cloudron.io/apps#community-app) to install this as a Community App (not reviewed by Cloudron) from the App Store.  
+
+The URL to use for install:
+```
+https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronVersions.json
+```
 
 ## Administration
 
@@ -46,11 +51,17 @@ Submit a pull request.  You're welcome to send an email if I haven't seen it.
 
 1. Update version in CloudronManifiest.json (pin to Bluesky PDS version).
 1. Then update CLOUDRON_CHANGELOG with the changes in version.
-1. Then `cloudron versions add`.  Use argument `--state testing` for pre-release versions to update CloudronVersions.js.
-1. Use `docker build -t sfeldkamp/cloudron-bluesky-pds:[version-number]`.  Cloudron CLI doesn't let you tag build with version numbers.
-1. Then `docker push sfeldkamp/cloudron-bluesky-pds:[version-number]` to push to Docker Hub.
+1. Then `cloudron build` to build the image locally and push to configured registry.
+1. Then `cloudron versions add --state testing` for pre-release versions to update CloudronVersions.json.
+1. Commit and push.
+1. Install and test the app as a new app in a Cloudron server.
+1. Update and test the app as an updated app in a Cloudron server.
+1. Then `cloudron versions add` to release the update.  
+1. Commit and push.
 
 Cloudron users with the app installed will be notified of an update when the CloudronVersions.json file shows a new version is available (or the update may be applied automatically for them).
+
+---
 
 Bluesky PDS README continues below...
 

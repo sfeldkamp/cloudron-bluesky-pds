@@ -22,20 +22,20 @@
                 "contactEmail": "cloudron@sethfeldkamp.com",
                 "description": "The Bluesky reference implementation of AT Protocol PDS (Personal Data Server)",
                 "documentationUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
+                "forumUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/discussions",
                 "healthCheckPath": "/xrpc/_health",
                 "httpPort": 3000,
                 "icon": "file://CloudronMedia/logo.png",
-                "iconUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/logo.png?raw=true",
-                "id": "com.sethfeldkamp.bluesky-pds",
+                "iconUrl": "https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronMedia/logo.png",
+                "id": "com.sethfeldkamp.cloudron-bluesky-pds",
                 "manifestVersion": 2,
                 "mediaLinks": [
-                    "https://github.com/sfeldkamp/cloudron-bluesky-pds/blob/main/CloudronMedia/Screenshot.png?raw=true"
+                    "https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronMedia/Screenshot.png"
                 ],
                 "minBoxVersion": "9.1.0",
                 "multiDomain": true,
                 "packagerName": "Seth Feldkamp",
                 "packagerUrl": "https://github.com/sfeldkamp",
-                "postInstallMessage": "See App checklist for final setup tasks.  Important!",
                 "tagline": "Your ATProtocol Personal Data Server",
                 "tags": [
                     "federation",
@@ -47,10 +47,10 @@
                 "title": "Bluesky PDS",
                 "version": "0.4.208",
                 "website": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
-                "dockerImage": "sfeldkamp/cloudron-bluesky-pds:v0.4.208"
+                "dockerImage": "ghcr.io/sfeldkamp/cloudron-bluesky-pds:20260317-144145-1439383dd"
             },
-            "creationDate": "Tue, 17 Mar 2026 00:25:48 GMT",
-            "ts": "Tue, 17 Mar 2026 00:25:48 GMT",
+            "creationDate": "Tue, 17 Mar 2026 14:42:40 GMT",
+            "ts": "Tue, 17 Mar 2026 14:42:40 GMT",
             "publishState": "testing"
         }
     }
