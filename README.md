@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/main/CloudronVe
 
 ## Administration
 
-Be aware that restarting the application or rebooting the Cloudron server will require all users to log in again to all authorized apps with access to their PDS.
+Be aware that restarting the application or rebooting the Cloudron server will expire user PDS sessions and require them to login again.
 
 Strongly recommend setting up a [secondary backup site](https://docs.cloudron.io/backups) at another storage provider other than your host.
 
