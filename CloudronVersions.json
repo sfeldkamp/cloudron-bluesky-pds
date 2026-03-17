@@ -47,7 +47,7 @@
                 "title": "Bluesky PDS",
                 "version": "1.0.0",
                 "website": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
-                "dockerImage": "sfeldkamp/cloudron-bluesky-pds:20260316-234428-304701c44"
+                "dockerImage": "sfeldkamp/cloudron-bluesky-pds:20260317-004928-424f32c8d"
             },
             "creationDate": "Tue, 17 Mar 2026 00:25:48 GMT",
             "ts": "Tue, 17 Mar 2026 00:25:48 GMT",
