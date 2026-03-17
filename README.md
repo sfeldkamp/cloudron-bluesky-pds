@@ -1,3 +1,61 @@
+# cloudron-bluesky-pds
+
+Bluesky maintains a [reference implementation](https://github.com/bluesky-social/atproto/tree/main/packages/pds) of an [AT Protocol PDS (Personal Data Server)](https://atproto.com/guides/the-at-stack#pds).  They also have [published a Docker image](https://github.com/bluesky-social/pds/pkgs/container/pds) for this PDS in the GitHub Container Registry.  Unfortunately this image won't work as-is in Cloudron.
+
+Instead this project forks [bluesky-social/pds](https://github.com/bluesky-social/pds), the image source code project.  We pull in relevant upstream changes when possible.  Main differences:
+1. Cloudron handles installation.  We don't need installer.sh which mostly sets up the host with Docker.
+1. We can't use compose.yaml.  Cloudron only has support for dockerfile.
+1. We don't need Caddy webserver.  Cloudron has a built in reverse proxy to map an app to a subdomain and handle inbound traffic.
+1. Watchtower service won't be necessary either.  Cloudron handles application updates.
+
+App version is pinned to the upstream project.
+
+## Installation
+
+Follow [these instructions](https://docs.cloudron.io/apps#community-app) to install this as a Community App (not reviewed by Cloudron) from the App Store.  The URL to use is: `https://raw.githubusercontent.com/sfeldkamp/cloudron-bluesky-pds/refs/heads/main/CloudronVersions.json`
+
+## Administration
+
+Be aware that restarting the application or rebooting the Cloudron server will require all users to log in again to all authorized apps with access to their PDS.
+
+Strongly recommend setting up a [secondary backup site](https://docs.cloudron.io/backups) at another storage provider other than your host.
+
+
+## Contributing
+
+Fork this repository then see [App Packaging](https://docs.cloudron.io/packaging/) guidance.  Additional help is available in the [App Packaging and Developement forum](https://forum.cloudron.io/category/96/app-packaging-development).
+
+Code for [Cloudron is hosted in Gitlab](https://git.cloudron.io/platform).
+- [Cloudron Base Image documentation](https://git.cloudron.io/platform/docker-base-image).
+- [Cloudron CLI](https://git.cloudron.io/platform/cloudron-cli)
+- [Cloudron Box](https://git.cloudron.io/platform/box) is the code for the server.
+
+Use the [local docker build workflow](https://docs.cloudron.io/packaging/tutorial#local-docker-build) since this app is published as a Custom App.  
+
+General workflow is...
+1. Make your changes
+1. `cloudron build` to build in your local docker.
+1. `cloudron install` to install the local docker image you built.  Choose a test location to install the app on your Cloudron server.
+1. Make additional changes.  Then `cloudron build` then `cloudron update` to update the test location app.
+
+Don't worry about publishing an image or adding a CloudronVersions.json entry.  I will take care of publishing the app after your changes are merged.
+
+Submit a pull request.  You're welcome to send an email if I haven't seen it.
+
+## Preparing a Release
+
+1. Update version in CloudronManifiest.json (pin to Bluesky PDS version).
+1. Then update CLOUDRON_CHANGELOG with the changes in version.
+1. Then `cloudron versions add`.  Use argument `--state testing` for pre-release versions to update CloudronVersions.js.
+1. Use `docker build -t sfeldkamp/cloudron-bluesky-pds:[version-number]`.  Cloudron CLI doesn't let you tag build with version numbers.
+1. Then `docker push sfeldkamp/cloudron-bluesky-pds:[version-number]` to push to Docker Hub.
+
+Cloudron users with the app installed will be notified of an update when the CloudronVersions.json file shows a new version is available (or the update may be applied automatically for them).
+
+Bluesky PDS README continues below...
+
+---
+
 # PDS
 
 Welcome to the repository for the official Bluesky PDS (Personal Data Server). This repository includes container images and documentation designed to assist technical people with hosting a Bluesky PDS.
