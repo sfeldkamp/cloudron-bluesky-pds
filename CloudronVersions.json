@@ -1,7 +1,7 @@
 {
     "stable": true,
     "versions": {
-        "1.0.0": {
+        "0.4.208": {
             "manifest": {
                 "addons": {
                     "localstorage": {
@@ -45,9 +45,9 @@
                     "social"
                 ],
                 "title": "Bluesky PDS",
-                "version": "1.0.0",
+                "version": "0.4.208",
                 "website": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
-                "dockerImage": "sfeldkamp/cloudron-bluesky-pds:20260317-004928-424f32c8d"
+                "dockerImage": "sfeldkamp/cloudron-bluesky-pds:v0.4.208"
             },
             "creationDate": "Tue, 17 Mar 2026 00:25:48 GMT",
             "ts": "Tue, 17 Mar 2026 00:25:48 GMT",
