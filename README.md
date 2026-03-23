@@ -39,6 +39,8 @@ User self registration requires an invite code.  To create invite codes open the
   goat pds admin create-invites
 ```
 
+:warning: It's not recommended to open the PDS for registration without an invite code at this time.  Tools for frustrating bots and monitoring abuse are still rather immature.
+
 ### User Migration
 
 See [the atproto guide](https://atproto.com/guides/account-migration).
