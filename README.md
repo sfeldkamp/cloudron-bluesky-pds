@@ -1,4 +1,12 @@
-⚠️ Investigating possible issue with rotation keys.  DO NOT USE FOR PRODUCTION ⚠️
+⚠️ ARCHIVED: DO NOT USE ⚠️
+
+This has the following known issues.
+1. The rotation private key is overwritten on restart.
+2. No recovery public key is set.
+3. 1 & 2 mean that accounts created or moved to a PDS can't have their DID updated.  That means they can't move off of it.
+4. Cloudron makes it easy to move the location of an app to another domain or subdomain.  That breaks PLC documents which need to have the service.serviceEndpoint updated for each.
+
+⚠️ Read the above.  DO NOT USE ⚠️
 
 # cloudron-bluesky-pds
 
