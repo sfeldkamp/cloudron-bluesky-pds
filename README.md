@@ -1,3 +1,5 @@
+⚠️ Investigating possible issue with rotation keys.  DO NOT USE FOR PRODUCTION ⚠️
+
 # cloudron-bluesky-pds
 
 Bluesky maintains a [reference implementation](https://github.com/bluesky-social/atproto/tree/main/packages/pds) of an [AT Protocol PDS (Personal Data Server)](https://atproto.com/guides/the-at-stack#pds).  They also have [published a Docker image](https://github.com/bluesky-social/pds/pkgs/container/pds) for this PDS in the GitHub Container Registry.  Unfortunately this image won't work as-is in Cloudron.
