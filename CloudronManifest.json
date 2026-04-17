@@ -13,10 +13,16 @@
   "checklist": {
     "add_alias": {
       "message": "Add a wildcard alias of `*.$CLOUDRON-APP-LOCATION` to the `$CLOUDRON-APP-LOCATION` location following the [instructions in this guide](https://docs.cloudron.io/apps#aliases)."
+    },
+    "configure_encrypted_backups":{
+      "message": "The app data contains server and user secrets.  You should ensure there are backups and that they are encrypted at rest to prevent hijacking of the server or user identity."
+    },
+    "save_recovery_key": {
+      "message": "On first start this app generates a one-time recovery private key at `/app/data/.pds-recovery-private-key.hex`. This key can be used to recover user identities if the PDS rotation key is ever lost. Retrieve the file via the Cloudron File Manager and store its contents securely offline (password manager or hardware token), then **delete the file from the app**. The PDS will warn on every boot until the file is removed."
     }
   },
   "contactEmail": "cloudron@sethfeldkamp.com",
-  "description": "The Bluesky reference implementation of AT Protocol PDS (Personal Data Server)",
+  "description": "The Bluesky reference implementation of AT Protocol PDS (Personal Data Server).\n\n Notes:\n\n Changing the location of this app is not safe.  User DID documents contain references to the PDS as serviceUrl.  This implementation does not update user DID documents when app location changes.",
   "documentationUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds",
   "forumUrl": "https://github.com/sfeldkamp/cloudron-bluesky-pds/discussions",
   "healthCheckPath": "/xrpc/_health",
@@ -41,6 +47,6 @@
     "social"
   ],
   "title": "Bluesky PDS",
-  "version": "0.4.208",
+  "version": "0.4.208.1",
   "website": "https://github.com/sfeldkamp/cloudron-bluesky-pds"
 }

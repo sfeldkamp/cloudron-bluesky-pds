@@ -1,0 +1,10 @@
+#!/bin/bash
+# Deterministic node stub for cloudron_init.sh unit tests.
+#
+# cloudron_init.sh invokes `node -e '<script>'` to generate a recovery
+# keypair via @atproto/crypto. In unit tests we don't have that package
+# (or /app/code) available, so we short-circuit and emit a fixed did:key
+# plus 64-char hex private key. The contract is two newline-separated
+# lines: did:key first, hex second.
+echo "did:key:zStubTestRecoveryKey00000000000000000000000000"
+echo "0000000000000000000000000000000000000000000000000000000000000001"

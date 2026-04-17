@@ -38,6 +38,10 @@ COPY --from=build /tmp/goat-build /usr/local/bin/goat
 COPY cloudron_start.sh /app/pkg/cloudron_start.sh
 RUN chmod +x /app/pkg/cloudron_start.sh
 
+# Copy cloudron_init.sh (invoked by cloudron_start.sh on first boot only)
+COPY cloudron_init.sh /app/pkg/cloudron_init.sh
+RUN chmod +x /app/pkg/cloudron_init.sh
+
 EXPOSE 3000
 ENV PDS_PORT=3000
 ENV NODE_ENV=production
